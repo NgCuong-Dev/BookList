@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>add book</title>
+    <th:block th:replace="layout :: link-css" ></th:block>
+</head>
+<body>
+<th:block th:replace="layout :: header" ></th:block>
+<div class="container">
+    <h1>add book</h1>
+    <form th:action="@{/books/add} " th:object="${book}" method="post">
+        <div class="col-6 mb-3">
+            <label for="title" class="form-label">ID:</label>
+            <input type="text" class="form-control" id="id" th:field="*{id}">
+        </div>
+        <div class="col-6 mb-3">
+            <label for="title" class="form-label">Title:</label>
+            <input type="text" class="form-control" id="title" th:field="*{title}">
+        </div>
+        <div class="col-6 mb-3">
+            <label for="title" class="form-label">Author:</label>
+            <input type="text" class="form-control" id="author" th:field="*{author}">
+        </div>
+        <div class="col-6 mb-3">
+            <label for="title" class="form-label">Price:</label>
+            <input type="text" class="form-control" id="price" th:field="*{price}">
+        </div>
+        <div class="col-6 mb-3">
+            <label for="title" class="form-label">category:</label>
+            <input type="text" class="form-control" id="category" th:field="*{category}">
+        </div>
+        <input type="submit" class="btn btn-primary" value="Save">
+    </form>
+    <br>
+    <a href="@{/books}">Back To List</a>
+</div>
+<th:block th:replace="layout :: footer"></th:block>
+</body>
+</html>
